@@ -1,0 +1,53 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true,
+			"style": {
+				"noNonNullAssertion": "off",
+				"useNamingConvention": "off",
+				"noNamespaceImport": "off",
+				"noDefaultExport": "off"
+			},
+			"complexity": {
+				"noVoid": "off",
+				"useSimplifiedLogicExpression": "off",
+				"noExcessiveCognitiveComplexity": {
+					"level": "warn",
+					"options": {
+						"maxAllowedComplexity": 20
+					}
+				}
+			},
+			"suspicious": {
+				"noConsoleLog": "off",
+				"noConsole": "off"
+			},
+			"correctness": {
+				"noUnusedImports": "off",
+				"useHookAtTopLevel": "off",
+				"noNodejsModules": "off",
+				"noUndeclaredDependencies": "off"
+			},
+			"performance": {
+				"noReExportAll": "off",
+				"noBarrelFile": "off",
+				"noDelete": "off"
+			}
+		}
+	},
+	"files": {
+		"include": ["src/**/*", "package.json"],
+		"ignore": ["*.queries.ts", "*.generated.ts"]
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single"
+		}
+	}
+}
